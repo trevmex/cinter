@@ -1,10 +1,11 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3', engine: 'jruby', engine_version: '1.7.16.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.8'
 # Use jdbcsqlite3 as the database for Active Record
-gem 'activerecord-jdbcsqlite3-adapter'
+gem 'activerecord-jdbcsqlite3-adapter', groups: [:development, :test]
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
@@ -31,4 +32,8 @@ gem 'sdoc', '~> 0.4.0',                              group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Make sane heroku logs
+gem 'rails_12factor', group: :production
 
+# Use postgres for heroku
+gem 'activerecord-jdbcpostgresql-adapter', group: :production

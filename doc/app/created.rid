@@ -1,0 +1,11 @@
+Fri, 19 Dec 2014 15:04:21 -0800
+README.rdoc	Fri, 19 Dec 2014 15:03:49 -0800
+app/controllers/application_controller.rb	Fri, 19 Dec 2014 01:34:53 -0800
+app/controllers/attendees_controller.rb	Fri, 19 Dec 2014 13:45:38 -0800
+app/controllers/partnerships_controller.rb	Fri, 19 Dec 2014 13:30:15 -0800
+app/helpers/application_helper.rb	Fri, 19 Dec 2014 01:34:53 -0800
+app/helpers/attendees_helper.rb	Fri, 19 Dec 2014 01:36:59 -0800
+app/helpers/partnerships_helper.rb	Fri, 19 Dec 2014 09:30:19 -0800
+app/mailers/attendee_mailer.rb	Fri, 19 Dec 2014 02:18:03 -0800
+app/models/attendee.rb	Fri, 19 Dec 2014 10:00:05 -0800
+app/models/partnership.rb	Fri, 19 Dec 2014 09:33:43 -0800

@@ -24,9 +24,9 @@ module Cinter
     config.action_mailer.smtp_settings = {
       address:              'smtp.gmail.com',
       port:                 587,
-      domain:               'trevreport.org',
-      user_name:            'trev@trevreport.org',
-      password:             'hqIDqfonp}E26d6hSM?x',
+      domain:               Rails.application.secrets.domain,
+      user_name:            Rails.application.secrets.user_name,
+      password:             Rails.application.secrets.password,
       authentication:       'plain',
       enable_starttls_auto: true  }
   end

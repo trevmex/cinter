@@ -1,28 +1,50 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+Cinter is a simple gift giving app for a Siinterklaus tradition (used in the Lalish-Menagh household).
 
 * Ruby version
 
+JRuby 1.7.16.1
+
 * System dependencies
+
+Java
 
 * Configuration
 
+You will need three secret environment variables to get mailing to work:
+
+** SECRET_DOMAIN=[your gmail domain (usually gmail.com)]
+** SECRET_USER_NAME=[your gmail address]
+** SECRET_PASSWORD=[your gmail password]
+
+All three have to be set BEFORE running `rails s` or `rails c`
+
 * Database creation
+
+`rake db:create`
 
 * Database initialization
 
+`rake db:migrate`
+
 * How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+`rake`
+
+* Services
+
+/attendees is the main app. You can add attendees here (which sends out a welcome email), and assign partners.
 
 * Deployment instructions
 
-* ...
+Deploy to heroku as follows:
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+1. Download the Heroku Toolbelt from https://toolbelt.heroku.com/
+2. `heroku create` to generate a heroku site
+3. `rake secret` to generate a secret key base
+4. `heroku config:set SECRET_KEY_BASE=[the secret you generated in step 3] SECRET_DOMAIN=[your gmail domain (usually gmail.com)] SECRET_USER_NAME=[your gmail address] SECRET_PASSWORD=[your gmail password] RAILS_ENV=production`
+5. `git push heroku master` to push to heroku
+6. `heroku run rake db:migrate` to set up your database
+7. `heroku ps:scale web=1` to spin up your app
+8. `heroku open` to open up you new app!
