@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  attendee_id: 1
+  partner_id: 1
+  creaate: MyString
+  destroy: MyString
+
+two:
+  attendee_id: 1
+  partner_id: 1
+  creaate: MyString
+  destroy: MyString

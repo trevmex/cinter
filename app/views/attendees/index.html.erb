@@ -1,0 +1,36 @@
+<h1>Listing attendees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th><!-- Sent? --></th>
+      <th><!-- Sending? --></th>
+      <th><!-- Proposed Partner --></th>
+      <th colspan="4"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @attendees.each do |attendee| %>
+      <% partner = @eligible_partners.reject { |p| p == attendee }.pop %>
+      <% @eligible_partners.reject! { |p| p == partner } %>
+      <tr>
+        <td><%= attendee.name %></td>
+        <td><%= attendee.email %></td>
+        <td><%#= attendee.sent %></td>
+        <td><%#= attendee.sending %></td>
+        <td><%#= partner.name unless partner.blank? || attendee.sending %></td>
+        <td><%= link_to 'Show', attendee %></td>
+        <td><%= link_to 'Edit', edit_attendee_path(attendee) %></td>
+        <td><%= link_to 'Destroy', attendee, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to("Add Partner", partnerships_path(partnership: {attendee_id: attendee, partner_id: partner}), :method => :post) unless attendee.sending %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Attendee', new_attendee_path %>

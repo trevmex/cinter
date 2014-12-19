@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Attendee:</strong>
+  <%= @partnership.attendee_id %>
+</p>
+
+<p>
+  <strong>Partner:</strong>
+  <%= @partnership.partner_id %>
+</p>
+
+<p>
+  <strong>Creaate:</strong>
+  <%= @partnership.creaate %>
+</p>
+
+<p>
+  <strong>Destroy:</strong>
+  <%= @partnership.destroy %>
+</p>
+
+<%= link_to 'Edit', edit_partnership_path(@partnership) %> |
+<%= link_to 'Back', partnerships_path %>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @attendee.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @attendee.email %>
+</p>
+
+<p>
+  <strong>Sent?:</strong>
+  <%= @attendee.sent %>
+</p>
+
+<% if @attendee.partnership.present? %>
+<h2>Partners</h2>
+<ul>
+    <li>
+      <%=h @attendee.partnership.partner.name %>
+      (<%= link_to "remove", @attendee.partnership, :method => :delete %>)
+    </li>
+</ul>
+<% end %>
+
+<%= link_to 'Edit', edit_attendee_path(@attendee) %> |
+<%= link_to 'Back', attendees_path %>

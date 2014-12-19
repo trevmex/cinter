@@ -1,0 +1,33 @@
+<%= form_for(@partnership) do |f| %>
+  <% if @partnership.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@partnership.errors.count, "error") %> prohibited this partnership from being saved:</h2>
+
+      <ul>
+      <% @partnership.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :attendee_id %><br>
+    <%= f.number_field :attendee_id %>
+  </div>
+  <div class="field">
+    <%= f.label :partner_id %><br>
+    <%= f.number_field :partner_id %>
+  </div>
+  <div class="field">
+    <%= f.label :creaate %><br>
+    <%= f.text_field :creaate %>
+  </div>
+  <div class="field">
+    <%= f.label :destroy %><br>
+    <%= f.text_field :destroy %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
