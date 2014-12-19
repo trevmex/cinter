@@ -14,9 +14,9 @@ Java
 
 You will need three secret environment variables to get mailing to work:
 
-** SECRET_DOMAIN=[your gmail domain (usually gmail.com)]
-** SECRET_USER_NAME=[your gmail address]
-** SECRET_PASSWORD=[your gmail password]
+1. SECRET_DOMAIN=[your gmail domain (usually gmail.com)]
+2. SECRET_USER_NAME=[your gmail address]
+3. SECRET_PASSWORD=[your gmail password]
 
 All three have to be set BEFORE running `rails s` or `rails c`
 
